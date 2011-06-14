@@ -72,7 +72,7 @@
 			parse_str($url_parsed['query'], $url_params);
 			$params = array_merge($params, $url_params);
 		}
-		
+
 
 		#
 		# create the request thingy
@@ -83,6 +83,9 @@
 		$oauth_params['oauth_nonce']		= oauth_generate_nonce();
 		$oauth_params['oauth_timestamp']	= oauth_generate_timestamp();
 		$oauth_params['oauth_consumer_key']	= $key_bucket['oauth_key'];
+		if ( isset($key_bucket['oauth_callback']) ) {
+			$oauth_params['oauth_callback']	= $key_bucket['oauth_callback'];
+		}
 
 		if (isset($key_bucket['user_key'])){
 			$oauth_params['oauth_token']		= $key_bucket['user_key'];
@@ -242,7 +245,6 @@
 	################################################################################################	
 
 	function oauth_url_to_hash($url){
-
 		$crap = oauth_http_request($url);
 		$bits = explode("&", $crap);
 
@@ -283,7 +285,7 @@
 	}
 
 	################################################################################################
-	
+
 	function oauth_http_request($url, $method="GET", $postdata=null){
 
 		#
@@ -327,7 +329,7 @@
 		}else{
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
 		}
-		
+
 		$response = curl_exec($ch);
 		$headers = curl_getinfo($ch);
 
@@ -350,6 +352,6 @@
 
 		return $response;
 	}
-	
+
 	################################################################################################
 ?>
