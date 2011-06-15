@@ -6,7 +6,7 @@ Object wrapper for lib_oauth by Cal Henderson
 
 ##Constructor Oauth_Consumer(consumer key, consumer secret)  
 
-        $consumer = new Oauth_Consumer(CONSUMER_KEY, CONSUMER_SECRET);
+	$consumer = new Oauth_Consumer(CONSUMER_KEY, CONSUMER_SECRET);
 
 ###Description 
 - Constructs a new Oauth_Consumer using a consumer key and secret  
@@ -20,7 +20,7 @@ Object wrapper for lib_oauth by Cal Henderson
 
 ##getAuthUrl(request_url, authorization_url, callback_url)
 
-        $auth_url = $consumer->getAuthUrl(REQUEST_URL, AUTH_URL, CALLBACK_URL);
+	$auth_url = $consumer->getAuthUrl(REQUEST_URL, AUTH_URL, CALLBACK_URL);
 
 ###Description
 - Retrieves the url to be redirected to for the authorization process of the oauth handshake
@@ -35,7 +35,7 @@ Object wrapper for lib_oauth by Cal Henderson
 
 ##getAccessToken(token, secret, access_url) 
 
-        $access = $consumer->getAccessToken(TOKEN, SECRET, ACCESS_URL);
+	$access = $consumer->getAccessToken(TOKEN, SECRET, ACCESS_URL);
 
 ###Description
 - Retrieves access token from the service provider
@@ -73,7 +73,7 @@ Object wrapper for lib_oauth by Cal Henderson
 - URL: Protected resource from the provider to be signed
 
 ###Return
-- Reponse: The reponse of the provider from the request
+- Response: The reponse of the provider from the request
 
 ##Examples
 ###Full Oauth Handshake
