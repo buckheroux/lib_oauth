@@ -5,7 +5,7 @@ Written By Buck Heroux
 Object wrapper for lib_oauth by Cal Henderson
 
 ##Constructor Oauth_Consumer(consumer key, consumer secret)  
------------------------------------------------------------
+
         $consumer = new Oauth_Consumer(CONSUMER_KEY, CONSUMER_SECRET);
 
 ###Description 
@@ -19,7 +19,6 @@ Object wrapper for lib_oauth by Cal Henderson
 - Oauth_Consumer object  
 
 ##getAuthUrl(request_url, authorization_url, callback_url)
---------------------------------------------------------
 
         $auth_url = $consumer->getAuthUrl(REQUEST_URL, AUTH_URL, CALLBACK_URL);
 
@@ -35,7 +34,6 @@ Object wrapper for lib_oauth by Cal Henderson
 - Signed Authorization URL: The signed auth url to be redirected to for authorization
 
 ##getAccessToken(token, secret, access_url) 
--------------------------------------------
 
         $access = $consumer->getAccessToken(TOKEN, SECRET, ACCESS_URL);
 
@@ -51,7 +49,6 @@ Object wrapper for lib_oauth by Cal Henderson
 - AccessToken/Secret: An associative array containing 'access_token' and 'access_token_secret'
 
 ##setAccessToken(access_token, access_secret)
----------------------------------------------
 
 	$consumer->setAccessToken(ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
 
@@ -66,11 +63,10 @@ Object wrapper for lib_oauth by Cal Henderson
 - Void: Nothing returns, used to sign requests
 
 ##signRequest($url)
--------------------
-###Description 
 
 	$response = $consumer->signRequest('http://timecube.com/protected?answer=42');
 
+###Description 
 - Signs the requests for the specified protected reqource of the provider. Used once the Oauth_Consumer has been assoicated with an Access Token via getAccessToken() or setAccessToken()
 
 ###Parameters
