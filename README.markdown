@@ -6,10 +6,12 @@ Object wrapper for lib_oauth by Cal Henderson
 
 ##Constructor
 ###Description 
-- Constructs a new Oauth_Consumer using a consumer key and secret
+- Constructs a new Oauth_Consumer using a consumer key and secret  
+
 ###Parameters
 - Consumer Key: Consumer Key given by the Oauth Provider  
 - Consumer Secret: Consumer Secret given by the Oauth Provider  
+ 
 ###Return
 - Oauth_Consumer object  
 
